@@ -304,58 +304,6 @@ public class MainFrame extends JFrame {
 					break;
 				}
 				flag.print();
-
-//				String[] command;
-//				if(type.getSelectedIndex() < 2) command = new String[]{
-//					"cmd.exe",
-//					"/c",
-//					"start",
-//					"cmd.exe",
-//					"/k",
-//					"cd bin && cls && java pack.Main " +
-//						type.getSelectedIndex() +
-//						" " +
-//						Integer.parseInt(width.getText()) +
-//						" " +
-//						Integer.parseInt(height.getText()) +
-//						" " +
-//						Integer.parseInt(size.getText()) +
-//						" " +
-//						fgColor.getSelectedValue() +
-//						" " +
-//						bgColor.getSelectedValue() +
-//						" " +
-//						image.getSelectedValue() +
-//						" " +
-//						Double.valueOf(verticalAlignment.getText()) +
-//						" " +
-//						Double.valueOf(horizontalAlignment.getText()) +
-//						" " +
-//						String.join(" ", colors.getText().split(" ")) +
-//						" && exit"
-//				};
-//				else command = new String[]{
-//					"cmd.exe",
-//					"/c",
-//					"start",
-//					"cmd.exe",
-//					"/k",
-//					"cd bin && cls && java pack.Main " +
-//						type.getSelectedIndex() +
-//						" " +
-//						Integer.parseInt(width.getText()) +
-//						" " +
-//						Integer.parseInt(height.getText()) +
-//						" " +
-//						String.join(" ", colors.getText().split(" ")) +
-//						" && exit"
-//				};
-//				Runtime runtime = Runtime.getRuntime();
-//				try{
-//					Process p = runtime.exec(command);
-//				}catch(IOException e1){
-//					e1.printStackTrace();
-//				}
 			}
 		});
 
