@@ -35,6 +35,11 @@ Versatile tool that allows you to create and print flags directly in your consol
   <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/readme_code2.png" alt="code_2" width="80%">
 </div>
 
+3. **UML class structure:**
+<div align="center">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/ConsoleCoatCraft_UML.png" alt="uml" width="80%">
+</div>
+
 ## Usage
 
 1. You can change all settings in the gui. Stripes are added in the Colors tab, separate the color names with blank spaces.
