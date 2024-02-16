@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="" alt="ConsoleCoatCraft" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/readme_banner.png" alt="ConsoleCoatCraft" width="100%">
 </div>
 
 <div align="center">
