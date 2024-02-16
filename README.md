@@ -56,13 +56,14 @@ Versatile tool that allows you to create and print flags directly in your consol
 
 ## Examples display
 
-1. Horizontal flag:
+1. **Horizontal flag:**
+
 <div align="center">
-  <img src="" alt="example" width="70%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/README_Update/readme_example1.png" alt="example" width="70%">
 </div>
 
-2. Vertical flag:
+2. **Vertical flag:**
 
 <div align="center">
-  <img src="" alt="example" width="70%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/README_Update/readme_example2.png" alt="example" width="70%">
 </div>
