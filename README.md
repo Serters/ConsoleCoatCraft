@@ -18,7 +18,7 @@ Versatile tool that allows you to create and print flags directly in your consol
 1. **Stripe Customization:** Choose between horizontal and vertical stripes.
 2. **Color Customization:** Select unlimited colors to create unique flag designs.
 3. **Coat of Arms Integration:** Personalize your flag with a custom coat of arms image.
-4. **User-Friendly Interface:** Enjoy a simple command-line interface for seamless flag creation.
+4. **User-Friendly Interface:** Enjoy a simple user interface for seamless flag creation.
 5. **Versatile Flag Designs:** Experiment with different settings to create a wide range of flag designs.
 6. **Examples for Inspiration:** Explore provided examples to spark creativity and serve as a starting point for your designs.
 7. **Cross-Platform Compatibility:** Build and run your flags on any platform with ease.
