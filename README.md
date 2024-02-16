@@ -53,3 +53,16 @@ Versatile tool that allows you to create and print flags directly in your consol
 <div align="center">
   <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/readme_gui2.png" alt="gui_1" width="70%">
 </div>
+
+## Examples display
+
+1. Horizontal flag:
+<div align="center">
+  <img src="" alt="example" width="70%">
+</div>
+
+2. Vertical flag:
+
+<div align="center">
+  <img src="" alt="example" width="70%">
+</div>
