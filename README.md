@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_banner.png" alt="ConsoleCoatCraft" width="100%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_resources/readme_banner.png" alt="ConsoleCoatCraft" width="100%">
 </div>
 
 <div align="center">
@@ -27,17 +27,17 @@ Versatile tool that allows you to create and print flags directly in your consol
 
 1. **Function bufferedImageToStringArray:** Converts the coat of arms image into an array of strings. Each string in the array represents a row of pixels from the coat of arms image. It creates a strings that mark transperent and visible pixels.
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_code1.png" alt="code_1" width="80%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_resources/readme_code1.png" alt="code_1" width="80%">
 </div>
 
 2. **Function createFlag:** The flag is saved as an array of strings and can be printed using a for each loop or by calling a print() function from the Flag class. It creates empty characters for the flag stripes and full characters for the coat of arms.
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_code2.png" alt="code_2" width="80%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_resources/readme_code2.png" alt="code_2" width="80%">
 </div>
 
 3. **UML class structure:**
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/ConsoleCoatCraft_UML.png" alt="uml" width="80%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_resources/ConsoleCoatCraft_UML.png" alt="uml" width="80%">
 </div>
 
 ## Usage
@@ -45,13 +45,13 @@ Versatile tool that allows you to create and print flags directly in your consol
 1. You can change all settings in the gui. Stripes are added in the Colors tab, separate the color names with blank spaces.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_gui1.png" alt="gui_1" width="70%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_resources/readme_gui1.png" alt="gui_1" width="70%">
 </div>
 
 2. You can build a flag without a coat of arms by selecting a plain type.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_gui2.png" alt="gui_1" width="70%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_resources/readme_gui2.png" alt="gui_1" width="70%">
 </div>
 
 ## Examples display
@@ -59,11 +59,11 @@ Versatile tool that allows you to create and print flags directly in your consol
 1. **Horizontal flag:**
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_example1.png" alt="example" width="70%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_resources/readme_example1.png" alt="example" width="70%">
 </div>
 
 2. **Vertical flag:**
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_example2.png" alt="example" width="70%">
+  <img src="https://raw.githubusercontent.com/Serters/ConsoleCoatCraft/main/readme_resources/readme_example2.png" alt="example" width="70%">
 </div>
