@@ -51,9 +51,7 @@ public class CoatOfArms {
 	}
 
 	private static BufferedImage resizeBufferedImage(String name, int height) throws IOException{
-		String dir = System.getProperty("user.dir");
-		while(!dir.endsWith("App")){ dir = dir.substring(0, dir.lastIndexOf("\\")); }
-		String filePath = dir + File.separator + name + ".png";
+		String filePath = "src/resources/" + name + ".png";
 
 		BufferedImage image = ImageIO.read(new File(filePath));
 		Image resultingImage = image.getScaledInstance(height * image.getWidth() / image.getHeight(), height, Image.SCALE_DEFAULT);
