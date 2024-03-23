@@ -1,8 +1,4 @@
-/**
- * 
- */
-/**
- * 
- */
-module App {
-	requires java.desktop;}
+module ConsoleCoatCraft {
+
+	requires java.desktop;
+}
