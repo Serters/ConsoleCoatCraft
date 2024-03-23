@@ -13,31 +13,28 @@ public abstract class Flag {
 	// Attributes
 	protected int width; // Width of the flag
 	protected int height; // Height of the flag
-	protected char direction; // Direction of the flag's design
 	protected String[] colors; // Array of colors used in the flag
 
 	/**
 	 * Constructor to initialize a Flag object with given parameters.
 	 * 
-	 * @param width     Width of the flag
-	 * @param height    Height of the flag
-	 * @param direction Direction of the flag's design
-	 * @param colors    Array of color codes to be used in the flag
+	 * @param width  Width of the flag
+	 * @param height Height of the flag
+	 * @param colors Array of color codes to be used in the flag
 	 */
-	public Flag(int width, int height, char direction, String... colors) {
+	public Flag(int width, int height, String... colors) {
 		this.width = width;
 		this.height = height;
-		this.direction = direction;
 
-		// If no colors provided, default to black
+		// If no colors provided, default to a random color
 		if (colors.length < 1) {
-			this.colors = new String[] { Colors.getBackgroundColor("black") };
+			this.colors = new String[] { ColorUtils.getBackgroundColor(ColorUtils.generateRandom(1)[0]) };
 		} else {
 			int i = 0;
 			this.colors = new String[colors.length];
 			// Get background color codes for provided colors
 			for (String code : colors) {
-				this.colors[i++] = Colors.getBackgroundColor(code);
+				this.colors[i++] = ColorUtils.getBackgroundColor(code);
 			}
 		}
 	}
@@ -54,11 +51,12 @@ public abstract class Flag {
 	 */
 	protected void display() {
 		String[] flag = this.generate();
-		Colors.reset();
+		ColorUtils.reset();
 		// Print each row of the flag design
 		for (String row : flag) {
 			System.out.println(row);
 		}
-		Colors.reset();
+		ColorUtils.reset();
+		System.out.println();
 	}
 }

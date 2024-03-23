@@ -2,6 +2,7 @@ package consolecoatcraft;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * The CoatOfArms class represents a coat of arms pattern.
@@ -16,19 +17,59 @@ public class CoatOfArms {
 	private int size; // Size of the coat of arms
 	private String symbol; // name of the symbol image
 	private String color; // Color of the coat of arms
+	private String horizontalPosition;
+	private String verticalPosition;
 
 	/**
-	 * Constructs a new CoatOfArms object with the specified size, symbol, and
-	 * color.
+	 * Constructs a new CoatOfArms object with the specified size, symbol, color,
+	 * horizontal and vertical position.
 	 *
-	 * @param size   The size of the coat of arms.
-	 * @param symbol The name of the symbol image.
-	 * @param color  The color of the coat of arms.
+	 * @param size               The size of the coat of arms.
+	 * @param symbol             The name of the symbol image.
+	 * @param color              The color of the coat of arms.
+	 * @param horizontalPosition The horizontal position of the coat of arms.
+	 * @param verticalPosition   The vertical position of the coat of arms.
 	 */
-	public CoatOfArms(int size, String symbol, String color) {
+	public CoatOfArms(int size, String symbol, String color, String horizontalPosition, String verticalPosition) {
 		this.size = size;
 		this.symbol = symbol;
-		this.color = color;
+		this.color = ColorUtils.getForegroundColor(color);
+		this.horizontalPosition = horizontalPosition;
+		this.verticalPosition = verticalPosition;
+	}
+
+	/**
+	 * Constructs a new CoatOfArms object with a random symbol, color, horizontal
+	 * position, and vertical position, based on predefined options.
+	 *
+	 * @param size The size of the coat of arms.
+	 */
+	public CoatOfArms(int size) {
+		// Symbol options: circle, crown, dolphin, eagle, fox, goat, horse
+		// Horizontal position options: left, center, right
+		// Vertical position options: top, middle, bottom
+
+		// Arrays of available options for symbols, horizontal positions, and vertical
+		// positions
+		String[] symbols = { "circle", "crown", "dolphin", "eagle", "fox", "goat", "horse" };
+		String[] horizontalPositions = { "left", "center", "right" };
+		String[] verticalPositions = { "top", "middle", "bottom" };
+
+		// Generate random indices to select random options from the arrays
+		Random random = new Random();
+		int symbolIndex = random.nextInt(symbols.length);
+		int horizontalIndex = random.nextInt(horizontalPositions.length);
+		int verticalIndex = random.nextInt(verticalPositions.length);
+
+		// Assign the random values to the corresponding attributes of the CoatOfArms
+		// object
+		this.size = size;
+		this.symbol = symbols[symbolIndex];
+		this.horizontalPosition = horizontalPositions[horizontalIndex];
+		this.verticalPosition = verticalPositions[verticalIndex];
+		// Generate a random color and assign it to the coat of arms using ColorUtils
+		// class
+		this.color = ColorUtils.getForegroundColor(ColorUtils.generateRandom(1)[0]);
 	}
 
 	/**
@@ -64,6 +105,21 @@ public class CoatOfArms {
 	}
 
 	/**
+	 * Method to display the coat of arms.
+	 */
+	protected void display() {
+		String[] coa = this.generate();
+		ColorUtils.reset();
+		System.out.print(this.color);
+		// Print each row of the flag design
+		for (String row : coa) {
+			System.out.println(row);
+		}
+		ColorUtils.reset();
+		System.out.println();
+	}
+
+	/**
 	 * Gets the size of the coat of arms.
 	 *
 	 * @return The size of the coat of arms.
@@ -80,4 +136,25 @@ public class CoatOfArms {
 	public String getColor() {
 		return this.color;
 	}
+
+	/**
+	 * Retrieves the horizontal position of the symbol on the coat of arms.
+	 *
+	 * @return The horizontal position of the symbol, which can be "left", "center",
+	 *         or "right".
+	 */
+	public String getHorizontalPosition() {
+		return horizontalPosition;
+	}
+
+	/**
+	 * Retrieves the vertical position of the symbol on the coat of arms.
+	 *
+	 * @return The vertical position of the symbol, which can be "top", "middle", or
+	 *         "bottom".
+	 */
+	public String getVerticalPosition() {
+		return verticalPosition;
+	}
+
 }
