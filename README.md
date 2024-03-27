@@ -11,7 +11,7 @@
 
 </div>
 
-Versatile tool that allows you to create and print flags directly in your console. With a user-friendly interface, you can build custom flags by choosing colors, patterns, and even adding a coat of arms.
+Versatile tool that allows you to create and print flags directly in your console. You can build custom flags by choosing colors, patterns, and even adding a coat of arms.
 
 ## Key Features
 
