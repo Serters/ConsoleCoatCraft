@@ -41,7 +41,7 @@ public class CoatOfArms implements Renderable, Cloneable {
 	public CoatOfArms(CoatOfArms original) {
         this.size = original.size;
         this.symbol = original.symbol;
-        this.color = original.color;
+        this.color = ColorUtils.getForegroundColor(original.color);
         this.horizontalPosition = original.horizontalPosition;
         this.verticalPosition = original.verticalPosition;
 	}

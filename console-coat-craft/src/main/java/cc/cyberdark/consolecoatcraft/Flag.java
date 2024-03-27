@@ -38,6 +38,12 @@ public abstract class Flag implements Renderable, Prototype {
 			}
 		}
 	}
+	
+	public Flag() {
+		this.width = 0;
+		this.height = 0;
+		this.colors = new String[0];
+	}
 
 	/**
 	 * Abstract method to generate the flag design.

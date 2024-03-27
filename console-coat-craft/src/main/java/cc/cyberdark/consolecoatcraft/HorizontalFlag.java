@@ -29,6 +29,14 @@ public class HorizontalFlag extends Flag {
 		this.coatOfArms = coatOfArms;
 	}
 
+	public HorizontalFlag(HorizontalFlag horizontalFlag) {
+		this.width = horizontalFlag.width;
+		this.height = horizontalFlag.height;
+		this.colors = new String[horizontalFlag.colors.length];
+	    System.arraycopy(horizontalFlag.colors, 0, this.colors, 0, horizontalFlag.colors.length);
+	    this.coatOfArms = horizontalFlag.getCoatOfArms();
+	}
+
 	/**
 	 * Generates the string array representing the flag with the coat of arms.
 	 *
@@ -40,7 +48,7 @@ public class HorizontalFlag extends Flag {
 		Arrays.fill(flag, "");
 		String[] coa = coatOfArms.generate();
 		flag[0] += coatOfArms.getColor();
-
+		
 		// Adjust flag height to ensure that it is divisible by the number of colors
 		if (this.height % this.colors.length != 0) {
 			this.height = (int) (Math.round(this.height / (double) this.colors.length) * this.colors.length);
@@ -88,16 +96,7 @@ public class HorizontalFlag extends Flag {
 
 	@Override
 	public Flag Clone() {
-        HorizontalFlag clonedFlag = null;
-		try {
-			clonedFlag = (HorizontalFlag) super.clone();
-	        clonedFlag.coatOfArms  = this.coatOfArms.Clone();// Deep copy of coatOfArms
-	        
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} // Call the clone method of the superclass
-		return clonedFlag;
+		return new HorizontalFlag(this);
 
 	}
 

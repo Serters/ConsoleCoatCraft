@@ -49,12 +49,11 @@ public class Main {
 
         //Clone
         CoatOfArms randomCoatOfArms2 = new CoatOfArms(8);
-        randomCoatOfArms2.display();
         HorizontalFlag flagToClone = new HorizontalFlag(15, 15, randomCoatOfArms2, randomColors);
         flagToClone.display();
         
         Flag clonedFlag = flagToClone.Clone();
-//        clonedFlag.resize(30, 30);
+        clonedFlag.resize(30, 30);
         clonedFlag.display();
         
         
