@@ -47,8 +47,17 @@ public class Main {
         VerticalFlag verticalCoatedFlag = new VerticalFlag(116, 60, randomCoatOfArms, randomColors);
         verticalCoatedFlag.display();
 
-        // Print the length of the randomColors array
-        System.out.println(randomColors.length);
+        //Clone
+        CoatOfArms randomCoatOfArms2 = new CoatOfArms(8);
+        randomCoatOfArms2.display();
+        HorizontalFlag flagToClone = new HorizontalFlag(15, 15, randomCoatOfArms2, randomColors);
+        flagToClone.display();
+        
+        Flag clonedFlag = flagToClone.Clone();
+//        clonedFlag.resize(30, 30);
+        clonedFlag.display();
+        
+        
     }
 
 }

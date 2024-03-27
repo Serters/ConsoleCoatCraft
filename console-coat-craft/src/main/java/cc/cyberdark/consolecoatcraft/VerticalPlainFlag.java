@@ -34,7 +34,7 @@ public class VerticalPlainFlag extends Flag {
 	 *         string represents a row in the flag.
 	 */
 	@Override
-	protected String[] generate() {
+	public String[] generate() {
 
 		String[] flag = new String[this.height];
 		String line;
@@ -56,6 +56,18 @@ public class VerticalPlainFlag extends Flag {
 		}
 
 		return flag;
+	}
+
+	@Override
+	public void info() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Flag Clone() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

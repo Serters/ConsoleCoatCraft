@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class VerticalFlag extends Flag {
 
 	/** The coat of arms associated with the flag. */
-	CoatOfArms coatOfArms;
+	private CoatOfArms coatOfArms;
 
 	/**
 	 * Constructs a new VerticalFlag object with the specified width, height, coat
@@ -35,7 +35,7 @@ public class VerticalFlag extends Flag {
 	 *
 	 * @return An array representing the content of the vertical flag.
 	 */
-	protected String[] generate() {
+	public String[] generate() {
 		String[] flag = new String[this.height];
 		Arrays.fill(flag, "");
 		String[] coa = coatOfArms.generate();
@@ -73,6 +73,23 @@ public class VerticalFlag extends Flag {
 			}
 		}
 		return flag;
+	}
+
+	public void resize(int width, int height, int symbolSize) {
+		super.resize(height, width);
+		this.coatOfArms.setSize(symbolSize);
+	}
+
+	@Override
+	public void info() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Flag Clone() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

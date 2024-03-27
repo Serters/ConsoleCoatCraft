@@ -12,7 +12,7 @@ import java.util.Random;
  * @version 1.1
  * @since 1.0
  */
-public class CoatOfArms {
+public class CoatOfArms implements Renderable, Cloneable {
 
 	private int size; // Size of the coat of arms
 	private String symbol; // name of the symbol image
@@ -36,6 +36,14 @@ public class CoatOfArms {
 		this.color = ColorUtils.getForegroundColor(color);
 		this.horizontalPosition = horizontalPosition;
 		this.verticalPosition = verticalPosition;
+	}
+	
+	public CoatOfArms(CoatOfArms original) {
+        this.size = original.size;
+        this.symbol = original.symbol;
+        this.color = original.color;
+        this.horizontalPosition = original.horizontalPosition;
+        this.verticalPosition = original.verticalPosition;
 	}
 
 	/**
@@ -107,7 +115,7 @@ public class CoatOfArms {
 	/**
 	 * Method to display the coat of arms.
 	 */
-	protected void display() {
+	public void display() {
 		String[] coa = this.generate();
 		ColorUtils.reset();
 		System.out.print(this.color);
@@ -117,15 +125,6 @@ public class CoatOfArms {
 		}
 		ColorUtils.reset();
 		System.out.println();
-	}
-
-	/**
-	 * Gets the size of the coat of arms.
-	 *
-	 * @return The size of the coat of arms.
-	 */
-	public int getSize() {
-		return this.size;
 	}
 
 	/**
@@ -155,6 +154,28 @@ public class CoatOfArms {
 	 */
 	public String getVerticalPosition() {
 		return verticalPosition;
+	}
+
+	/**
+	 * Gets the size of the coat of arms.
+	 *
+	 * @return The size of the coat of arms.
+	 */
+	public int getSize() {
+		return this.size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	@Override
+	public void info() {
+		// TODO Auto-generated method stub
+	}
+
+	public CoatOfArms Clone() {
+		return new CoatOfArms(this);
 	}
 
 }

@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class HorizontalFlag extends Flag {
 
 	/** The coat of arms to be displayed on the flag. */
-	CoatOfArms coatOfArms;
+	private CoatOfArms coatOfArms;
 
 	/**
 	 * Constructs a new HorizontalFlag object with the specified width, height, coat
@@ -35,7 +35,7 @@ public class HorizontalFlag extends Flag {
 	 * @return The string array representing the flag.
 	 */
 	@Override
-	protected String[] generate() {
+	public String[] generate() {
 		String[] flag = new String[this.height];
 		Arrays.fill(flag, "");
 		String[] coa = coatOfArms.generate();
@@ -74,4 +74,35 @@ public class HorizontalFlag extends Flag {
 		}
 		return flag;
 	}
+	
+	public void resize(int width, int height, int symbolSize) {
+		super.resize(height, width);
+		this.coatOfArms.setSize(symbolSize);
+	}
+
+	@Override
+	public void info() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Flag Clone() {
+        HorizontalFlag clonedFlag = null;
+		try {
+			clonedFlag = (HorizontalFlag) super.clone();
+	        clonedFlag.coatOfArms  = this.coatOfArms.Clone();// Deep copy of coatOfArms
+	        
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} // Call the clone method of the superclass
+		return clonedFlag;
+
+	}
+
+	public CoatOfArms getCoatOfArms() {
+		return coatOfArms;
+	}
+
 }

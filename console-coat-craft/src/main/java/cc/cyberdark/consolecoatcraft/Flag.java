@@ -8,7 +8,7 @@ package cc.cyberdark.consolecoatcraft;
  * @version 1.1
  * @since 1.0
  */
-public abstract class Flag {
+public abstract class Flag implements Renderable, Prototype {
 
 	// Attributes
 	protected int width; // Width of the flag
@@ -44,12 +44,12 @@ public abstract class Flag {
 	 * 
 	 * @return String array representing the flag design
 	 */
-	protected abstract String[] generate();
+	public abstract String[] generate();
 
 	/**
 	 * Method to display the flag.
 	 */
-	protected void display() {
+	public void display() {
 		String[] flag = this.generate();
 		ColorUtils.reset();
 		// Print each row of the flag design
@@ -58,5 +58,16 @@ public abstract class Flag {
 		}
 		ColorUtils.reset();
 		System.out.println();
+	}
+	
+	public void resize(int height, int width) {
+		this.height = height;
+		this.width = width;	
+	}
+
+	public String[] getColors() {
+	    String[] c = new String[this.colors.length];
+	    System.arraycopy(this.colors, 0, c, 0, this.colors.length);
+	    return c;
 	}
 }
