@@ -1,4 +1,4 @@
-package cc.cyberdark.consolecoatcraft;
+package cc.cyberdark.flags;
 
 import java.util.Arrays;
 
@@ -25,6 +25,13 @@ public class VerticalPlainFlag extends Flag {
 	 */
 	public VerticalPlainFlag(int width, int height, String... colors) {
 		super(width, height, colors);
+	}
+
+	public VerticalPlainFlag(VerticalPlainFlag verticalPlainFlag) {
+		this.width = verticalPlainFlag.width;
+		this.height = verticalPlainFlag.height;
+		this.colors = new String[verticalPlainFlag.colors.length];
+		System.arraycopy(verticalPlainFlag.colors, 0, this.colors, 0, verticalPlainFlag.colors.length);
 	}
 
 	/**
@@ -58,16 +65,25 @@ public class VerticalPlainFlag extends Flag {
 		return flag;
 	}
 
+	/**
+	 * Displays information about the VerticalPlainFlag object.
+	 * This method overrides the info() method in the superclass (Flag) to provide additional information specific to VerticalPlainFlag.
+	 */
 	@Override
 	public void info() {
-		// TODO Auto-generated method stub
-		
+	    System.out.println("Vertical Plain Flag information: ");
+	    super.info(); // Call the info() method of the superclass to display basic flag information
 	}
 
+	/**
+	 * Creates a deep copy of the VerticalPlainFlag object.
+	 *
+	 * @return A new instance of VerticalPlainFlag with the same attributes as the original object.
+	 */
 	@Override
-	public Flag Clone() {
-		// TODO Auto-generated method stub
-		return null;
+	public VerticalPlainFlag Clone() {
+	    return new VerticalPlainFlag(this); // Create a new VerticalPlainFlag object using the copy constructor
 	}
+
 
 }

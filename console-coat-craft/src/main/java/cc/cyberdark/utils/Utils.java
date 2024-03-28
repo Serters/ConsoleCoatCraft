@@ -1,4 +1,4 @@
-package cc.cyberdark.consolecoatcraft;
+package cc.cyberdark.utils;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
