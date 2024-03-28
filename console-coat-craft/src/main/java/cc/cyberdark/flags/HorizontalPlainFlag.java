@@ -1,5 +1,6 @@
-package cc.cyberdark.consolecoatcraft;
+package cc.cyberdark.flags;
 
+//TODO
 import java.util.Arrays;
 
 /**
@@ -25,6 +26,13 @@ public class HorizontalPlainFlag extends Flag {
 	 */
 	public HorizontalPlainFlag(int width, int height, String... colors) {
 		super(width, height, colors);
+	}
+
+	public HorizontalPlainFlag(HorizontalPlainFlag horizontalPlainFlag) {
+		this.width = horizontalPlainFlag.width;
+		this.height = horizontalPlainFlag.height;
+		this.colors = new String[horizontalPlainFlag.colors.length];
+		System.arraycopy(horizontalPlainFlag.colors, 0, this.colors, 0, horizontalPlainFlag.colors.length);
 	}
 
 	/**
@@ -61,16 +69,25 @@ public class HorizontalPlainFlag extends Flag {
 		return flag;
 	}
 
+	/**
+	 * Creates a deep copy of the HorizontalPlainFlag object.
+	 *
+	 * @return A new instance of HorizontalPlainFlag with the same attributes as the
+	 *         original object.
+	 */
 	@Override
-	public void info() {
-		// TODO Auto-generated method stub
-		
+	public HorizontalPlainFlag Clone() {
+		return new HorizontalPlainFlag(this);
 	}
 
-	@Override
-	public Flag Clone() {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Displays information about the HorizontalPlainFlag object. This method
+	 * overrides the info() method in the superclass (Flag) to provide additional
+	 * information specific to HorizontalPlainFlag.
+	 */
+	public void info() {
+		System.out.println("Horizontal Plain Flag information: ");
+		super.info(); // Call the info() method of the superclass to display basic flag information
 	}
 
 }

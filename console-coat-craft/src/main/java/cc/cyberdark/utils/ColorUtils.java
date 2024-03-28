@@ -1,4 +1,4 @@
-package cc.cyberdark.consolecoatcraft;
+package cc.cyberdark.utils;
 
 import java.util.Map;
 import java.util.Random;
@@ -27,7 +27,7 @@ public class ColorUtils {
 		foregroundColors.put("black", "\033[30m");
 		foregroundColors.put("dark_gray", "\033[90m");
 		foregroundColors.put("light_gray", "\033[37m");
-		foregroundColors.put("white", "\033[37m");
+		foregroundColors.put("white", "\u001B[38;2;255;255;255m");
 		foregroundColors.put("red", "\033[31m");
 		foregroundColors.put("light_red", "\033[91m");
 		foregroundColors.put("orange", "\033[38;5;208m");
@@ -40,7 +40,7 @@ public class ColorUtils {
 		foregroundColors.put("teal", "\033[36m");
 		foregroundColors.put("light_cyan", "\033[96m");
 		foregroundColors.put("blue", "\033[34m");
-		foregroundColors.put("light_blue", "\033[94m");
+		foregroundColors.put("light_blue", "\u001B[38;2;109;169;210m");
 		foregroundColors.put("purple", "\033[35m");
 		foregroundColors.put("light_magenta", "\033[95m");
 		foregroundColors.put("pink", "\033[38;5;206m");
@@ -49,7 +49,7 @@ public class ColorUtils {
 		backgroundColors.put("black", "\033[40m");
 		backgroundColors.put("dark_gray", "\033[100m");
 		backgroundColors.put("light_gray", "\033[47m");
-		backgroundColors.put("white", "\033[47m");
+		backgroundColors.put("white", "\u001B[48;2;255;255;255m");
 		backgroundColors.put("red", "\033[41m");
 		backgroundColors.put("light_red", "\033[101m");
 		backgroundColors.put("orange", "\033[48;5;208m");
@@ -62,7 +62,7 @@ public class ColorUtils {
 		backgroundColors.put("teal", "\033[46m");
 		backgroundColors.put("light_cyan", "\033[106m");
 		backgroundColors.put("blue", "\033[44m");
-		backgroundColors.put("light_blue", "\033[104m");
+		backgroundColors.put("light_blue", "\u001B[48;2;109;169;210m");
 		backgroundColors.put("purple", "\033[45m");
 		backgroundColors.put("light_magenta", "\033[105m");
 		backgroundColors.put("pink", "\033[48;5;206m");
@@ -85,7 +85,7 @@ public class ColorUtils {
 		for (String colorName : foregroundColors.keySet()) {
 			System.out.print(foregroundColors.get(colorName) + " " + colorName);
 			count++;
-			// Add padding to align the colors nicely
+			// Add padding to align the colors
 			for (int i = 0; i < 20 - colorName.length(); i++) {
 				System.out.print(" ");
 			}
@@ -106,7 +106,7 @@ public class ColorUtils {
 			}
 			System.out.print("\033[30m");
 			count++;
-			// Add padding to align the colors nicely
+			// Add padding to align the colors
 			for (int i = 0; i < 20 - colorName.length(); i++) {
 				System.out.print(" ");
 			}

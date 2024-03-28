@@ -1,22 +1,28 @@
-package cc.cyberdark.consolecoatcraft;
+package cc.cyberdark.flags;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Random;
 
+import cc.cyberdark.interfaces.Prototype;
+import cc.cyberdark.interfaces.Renderable;
+import cc.cyberdark.utils.ColorUtils;
+import cc.cyberdark.utils.Utils;
+
 /**
  * The CoatOfArms class represents a coat of arms pattern.
+ * It implements both the Renderable and Prototype interfaces.
  * 
  * @author github.com/Serters
  * @author github.com/DaniloIvk
  * @version 1.1
  * @since 1.0
  */
-public class CoatOfArms implements Renderable, Cloneable {
+public class CoatOfArms implements Renderable, Prototype<CoatOfArms> {
 
-	private int size; // Size of the coat of arms
-	private String symbol; // name of the symbol image
-	private String color; // Color of the coat of arms
+	private int size;
+	private String symbol;
+	private String color;
 	private String horizontalPosition;
 	private String verticalPosition;
 
@@ -37,13 +43,19 @@ public class CoatOfArms implements Renderable, Cloneable {
 		this.horizontalPosition = horizontalPosition;
 		this.verticalPosition = verticalPosition;
 	}
-	
+
+	/**
+	 * Constructs a new CoatOfArms object by cloning an existing CoatOfArms object.
+	 * This constructor creates a deep copy of the original CoatOfArms object.
+	 *
+	 * @param original The original CoatOfArms object to be cloned.
+	 */
 	public CoatOfArms(CoatOfArms original) {
-        this.size = original.size;
-        this.symbol = original.symbol;
-        this.color = ColorUtils.getForegroundColor(original.color);
-        this.horizontalPosition = original.horizontalPosition;
-        this.verticalPosition = original.verticalPosition;
+		this.size = original.size; // Copy the size attribute
+		this.symbol = original.symbol; // Copy the symbol attribute
+		this.color = ColorUtils.getForegroundColor(original.color); // Copy the color attribute
+		this.horizontalPosition = original.horizontalPosition; // Copy the horizontal position attribute
+		this.verticalPosition = original.verticalPosition; // Copy the vertical position attribute
 	}
 
 	/**
@@ -82,31 +94,41 @@ public class CoatOfArms implements Renderable, Cloneable {
 
 	/**
 	 * Generates the coat of arms pattern as an array of strings. Each string
-	 * represents a row in the pattern.
+	 * represents a row in the pattern, with characters representing the coat of
+	 * arms symbol or background.
 	 *
-	 * @return The coat of arms pattern as an array of strings.
+	 * The method reads the symbol image associated with the coat of arms, resizes
+	 * it to the specified size, and converts it into a pattern of characters
+	 * representing the image pixels. Each pixel is represented by two characters:
+	 * "██" for non-transparent pixels and " " for transparent pixels.
+	 *
+	 * The alpha value of each pixel in the resized image is used to determine its
+	 * transparency. The ARGB (Alpha, Red, Green, Blue) value of the pixel is
+	 * retrieved using the {@code getRGB} method, and the alpha value is extracted
+	 * by shifting the ARGB value to the right by 24 bits and then masking it with
+	 * 0xFF (255 in decimal). An alpha value of 0 indicates full transparency, while
+	 * an alpha value of 255 indicates full opacity.
+	 * 
+	 * @return The coat of arms pattern as an array of strings, where each string
+	 *         represents a row in the pattern.
 	 */
 	public String[] generate() {
 		try {
 			String[] output = new String[this.size];
 			BufferedImage image = Utils.resizeBufferedImage(this.symbol, this.size);
 
-			// Iterate over each row in the image
 			for (int y = 0; y < image.getHeight(); y++) {
 				StringBuilder row = new StringBuilder();
-				// Iterate over each pixel in the row
 				for (int x = 0; x < image.getWidth(); x++) {
 					int argb = image.getRGB(x, y);
 					int alpha = argb >> 24 & 0xFF;
-					String s = (alpha > 0) ? "██" : "  "; // Use full block character for non-transparent pixels
+					String s = (alpha > 0) ? "██" : "  ";
 					row.append(s);
 				}
 				output[y] = row.toString();
 			}
 			return output;
 		} catch (IOException e) {
-			// If an error occurs during image processing, print an error message and return
-			// an empty array
 			System.err.println("Error generating coat of arms: " + e.getMessage());
 			return new String[0];
 		}
@@ -125,6 +147,23 @@ public class CoatOfArms implements Renderable, Cloneable {
 		}
 		ColorUtils.reset();
 		System.out.println();
+	}
+
+	/**
+	 * Displays information about the coat of arms, including its symbol and size.
+	 */
+	@Override
+	public void info() {
+		System.out.println(this.symbol + " coat of arms information: \n	Size: " + this.size);
+	}
+
+	/**
+	 * Creates and returns a deep copy of the current coat of arms instance.
+	 *
+	 * @return A new CoatOfArms object that is a copy of the current instance.
+	 */
+	public CoatOfArms Clone() {
+		return new CoatOfArms(this);
 	}
 
 	/**
@@ -165,17 +204,13 @@ public class CoatOfArms implements Renderable, Cloneable {
 		return this.size;
 	}
 
+	/**
+	 * Sets the size of the coat of arms to the specified value.
+	 *
+	 * @param size The new size of the coat of arms.
+	 */
 	public void setSize(int size) {
 		this.size = size;
-	}
-
-	@Override
-	public void info() {
-		// TODO Auto-generated method stub
-	}
-
-	public CoatOfArms Clone() {
-		return new CoatOfArms(this);
 	}
 
 }
