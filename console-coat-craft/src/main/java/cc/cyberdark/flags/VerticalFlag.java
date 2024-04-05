@@ -31,12 +31,38 @@ public class VerticalFlag extends Flag {
 		this.coatOfArms = coatOfArms;
 	}
 
+	/**
+	 * Constructs a VerticalFlag object by copying the attributes of another
+	 * VerticalFlag object. This constructor initializes the width, height, colors
+	 * array, and coat of arms of the new VerticalFlag object using the
+	 * corresponding values from the provided VerticalFlag object.
+	 *
+	 * @param verticalFlag The VerticalFlag object from which to copy the
+	 *                     attributes.
+	 */
 	public VerticalFlag(VerticalFlag verticalFlag) {
 		this.width = verticalFlag.width;
 		this.height = verticalFlag.height;
 		this.colors = new String[verticalFlag.colors.length];
 		System.arraycopy(verticalFlag.colors, 0, this.colors, 0, verticalFlag.colors.length);
 		this.coatOfArms = verticalFlag.getCoatOfArms();
+	}
+
+	/**
+	 * Constructs a VerticalFlag object based on the provided HorizontalFlag object.
+	 * This constructor initializes the width, height, colors array, and coat of
+	 * arms of the new VerticalFlag object using the corresponding values from the
+	 * provided HorizontalFlag object.
+	 *
+	 * @param horizontalFlag The HorizontalFlag object from which to construct the
+	 *                       VerticalFlag.
+	 */
+	public VerticalFlag(HorizontalFlag horizontalFlag) {
+		this.width = horizontalFlag.width;
+		this.height = horizontalFlag.height;
+		this.colors = new String[horizontalFlag.colors.length];
+		System.arraycopy(horizontalFlag.colors, 0, this.colors, 0, horizontalFlag.colors.length);
+		this.coatOfArms = horizontalFlag.getCoatOfArms();
 	}
 
 	@Override
@@ -55,7 +81,7 @@ public class VerticalFlag extends Flag {
 		if (this.width % this.colors.length != 0) {
 			this.width = (int) (Math.round(this.width / (double) this.colors.length) * this.colors.length);
 		}
-		
+
 		// Calculate padding for the coat of arms
 		int left = Utils.horizontalyAlign(coatOfArms.getHorizontalPosition(), this.width, coatOfArms.getSize());
 		int right = Math.max(this.width - left - this.coatOfArms.getSize(), 0);
@@ -69,7 +95,7 @@ public class VerticalFlag extends Flag {
 		String leftPadding = pad.repeat(left);
 		String rightPadding = (pad.repeat(right))
 				.substring((leftPadding.length() + this.coatOfArms.getSize() * 2) % pad.length());
-		
+
 		// Iterate over each row of the flag
 		for (int row = 0; row < this.height; row++) {
 			if (row < top) {
@@ -89,37 +115,40 @@ public class VerticalFlag extends Flag {
 	}
 
 	/**
-	 * Resizes the VerticalFlag object with the specified width, height, and symbol size.
+	 * Resizes the VerticalFlag object with the specified width, height, and symbol
+	 * size.
 	 *
 	 * @param width      The new width of the flag.
 	 * @param height     The new height of the flag.
 	 * @param symbolSize The new size of the coat of arms symbol.
 	 */
 	public void resize(int width, int height, int symbolSize) {
-	    super.resize(height, width); // Call the superclass method to resize the flag
-	    this.coatOfArms.setSize(symbolSize); // Resize the coat of arms symbol
+		super.resize(height, width); // Call the superclass method to resize the flag
+		this.coatOfArms.setSize(symbolSize); // Resize the coat of arms symbol
 	}
 
 	/**
-	 * Displays information about the VerticalFlag object.
-	 * This method overrides the info() method in the superclass (Flag) to provide additional information specific to VerticalFlag.
-	 * It also includes information about the associated coat of arms.
+	 * Displays information about the VerticalFlag object. This method overrides the
+	 * info() method in the superclass (Flag) to provide additional information
+	 * specific to VerticalFlag. It also includes information about the associated
+	 * coat of arms.
 	 */
 	@Override
 	public void info() {
-	    System.out.println("Vertical Flag information: ");
-	    super.info(); // Call the info() method of the superclass to display basic flag information
-	    coatOfArms.info(); // Display information about the associated coat of arms
+		System.out.println("Vertical Flag information: ");
+		super.info(); // Call the info() method of the superclass to display basic flag information
+		coatOfArms.info(); // Display information about the associated coat of arms
 	}
 
 	/**
 	 * Creates a deep copy of the VerticalFlag object.
 	 *
-	 * @return A new instance of VerticalFlag with the same attributes as the original object.
+	 * @return A new instance of VerticalFlag with the same attributes as the
+	 *         original object.
 	 */
 	@Override
 	public VerticalFlag Clone() {
-	    return new VerticalFlag(this); // Create a new VerticalFlag object using the copy constructor
+		return new VerticalFlag(this); // Create a new VerticalFlag object using the copy constructor
 	}
 
 	/**
@@ -128,8 +157,7 @@ public class VerticalFlag extends Flag {
 	 * @return The coat of arms object associated with the flag.
 	 */
 	public CoatOfArms getCoatOfArms() {
-	    return coatOfArms;
+		return coatOfArms;
 	}
-
 
 }

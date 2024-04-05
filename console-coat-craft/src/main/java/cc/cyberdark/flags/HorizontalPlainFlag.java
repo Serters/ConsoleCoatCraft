@@ -1,6 +1,5 @@
 package cc.cyberdark.flags;
 
-//TODO
 import java.util.Arrays;
 
 /**
@@ -28,6 +27,15 @@ public class HorizontalPlainFlag extends Flag {
 		super(width, height, colors);
 	}
 
+	/**
+	 * Constructs a HorizontalPlainFlag object by copying the attributes of another
+	 * HorizontalPlainFlag object. This constructor initializes the width, height,
+	 * and colors array of the new HorizontalPlainFlag object using the
+	 * corresponding values from the provided HorizontalPlainFlag object.
+	 *
+	 * @param horizontalPlainFlag The HorizontalPlainFlag object from which to copy
+	 *                            the attributes.
+	 */
 	public HorizontalPlainFlag(HorizontalPlainFlag horizontalPlainFlag) {
 		this.width = horizontalPlainFlag.width;
 		this.height = horizontalPlainFlag.height;

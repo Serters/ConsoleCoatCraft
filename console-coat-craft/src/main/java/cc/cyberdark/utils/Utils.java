@@ -5,7 +5,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Map;
 
+//TODO
 /**
  * Utility methods for image manipulation and alignment calculations.
  * 
@@ -87,6 +91,36 @@ public class Utils {
 			return flagHeight - coaSize;
 		default:
 			return 0;
+		}
+	}
+
+	/**
+	 * Imports data from a specified file and updates the provided map with
+	 * key-value pairs. Each line in the file is expected to be in the format
+	 * "key=value", where key and value are separated by "=". The method reads each
+	 * line, extracts the key and value, and adds them to the map. Note: This method
+	 * assumes that the file is located in the "src/main/resources/colors/"
+	 * directory.
+	 *
+	 * @param map      The map to be updated with the imported key-value pairs.
+	 * @param fileName The name of the file (excluding extension) containing the
+	 *                 data to be imported. The file is expected to be located in
+	 *                 the "src/main/resources/colors/" directory.
+	 */
+	public static void importData(Map<String, String> map, String fileName) {
+		String filePath = "src/main/resources/colors/" + fileName + ".txt";
+		try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+			String line;
+			while ((line = reader.readLine()) != null) {
+				// Split the line by ":" to separate key and value
+				String[] parts = line.split("=");
+				if (parts.length == 2) {
+					// Add key-value pair to the map
+					map.put(parts[0], "\033" + parts[1].substring(4));
+				}
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading file: " + e.getMessage());
 		}
 	}
 

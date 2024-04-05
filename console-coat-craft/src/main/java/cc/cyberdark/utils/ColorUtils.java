@@ -80,6 +80,7 @@ public class ColorUtils {
 	 * the foreground color to white to ensure visibility.
 	 */
 	public static void displayOptions() {
+		reset();
 		System.out.println("Foreground colors:");
 		int count = 0;
 		for (String colorName : foregroundColors.keySet()) {
@@ -115,6 +116,7 @@ public class ColorUtils {
 			}
 		}
 		System.out.println();
+		reset();
 	}
 
 	/**
@@ -180,6 +182,26 @@ public class ColorUtils {
 		System.arraycopy(colorNames, 0, randomColors, 0, numerOfColors);
 
 		return randomColors;
+	}
+
+	/**
+	 * Imports background colors data from a specified file and updates the
+	 * corresponding data structure.
+	 *
+	 * @param file The file containing the background colors data to be imported.
+	 */
+	public static void importBackgroundColors(String file) {
+		Utils.importData(backgroundColors, file);
+	}
+
+	/**
+	 * Imports foreground colors data from a specified file and updates the
+	 * corresponding data structure.
+	 *
+	 * @param file The file containing the foreground colors data to be imported.
+	 */
+	public static void importForegroundColors(String file) {
+		Utils.importData(backgroundColors, file);
 	}
 
 	/**

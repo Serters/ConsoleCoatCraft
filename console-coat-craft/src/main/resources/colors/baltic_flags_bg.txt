@@ -1,0 +1,12 @@
+Baltic Countries Flag colors:
+
+Estonia:
+estonia_blue=\033[48;2;55;118;197m
+
+Latvia:
+latvia_red=\033[48;2;135;14;30m
+
+Lithuania:
+lithuania_yellow=\033[48;2;253;186;11m
+lithuania_green=\033[48;2;0;106;66m
+lithuania_red=\033[48;2;194;34;41m

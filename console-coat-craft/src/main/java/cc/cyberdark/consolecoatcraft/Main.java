@@ -67,7 +67,13 @@ public class Main {
 		clonedFlag.info();
 		
 		FlagsCatalogue.displayAll();
-
+		
+		ColorUtils.importBackgroundColors("baltic_flags_bg");
+		HorizontalPlainFlag lithuniaFlag = new HorizontalPlainFlag(30, 20, "lithuania_yellow", "lithuania_green", "lithuania_red");
+		lithuniaFlag.display();
+		
+		ColorUtils.displayOptions();
+		
 	}
 
 }
