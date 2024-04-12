@@ -19,6 +19,26 @@
 4. **Color Customization**: Choose from a wide range of colors for both flag backgrounds and coat of arms, if non fit you can add your own!
 5. **Rendering Options**: Render flags and coat of arms patterns for display or further processing.
 
+## Examples
+
+1. **Vertical Flag**:
+<div align="center">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/horizontalFlag_example.png" width="100%">
+</div>
+<div align="center">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/horizontalFlag_example_display.png" width="100%">
+</div>
+
+---
+
+2. **Horizontal Flag**:
+<div align="center">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/verticalFlag_example.png" width="100%">
+</div>
+<div align="center">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/verticalFlag_example_display.png" width="100%">
+</div>
+
 ## UML class diagram
 
 <div align="center">
@@ -62,7 +82,3 @@
 
 ---
 
-## Examples
-
-
-   
