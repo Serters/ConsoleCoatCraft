@@ -4,6 +4,13 @@ import java.util.Map;
 import java.util.Random;
 import java.util.LinkedHashMap;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
  * The Colors class provides utility methods for working with ANSI color codes
  * in the console.
@@ -211,4 +218,55 @@ public class ColorUtils {
 		System.out.print("\033[0m");
 	}
 
+	/**
+	 * Converts a hex color code to an ANSI escape code and saves it with the given
+	 * color name.
+	 * <p>
+	 * The method extracts the RGB values from the hex code, formats them into an
+	 * ANSI escape code for the background color, and saves it using the specified
+	 * color name.
+	 *
+	 * @param hexCode   the hex color code (e.g., "FF5733" or "#FF5733").
+	 * @param colorName the name to associate with the color when saving.
+	 */
+	public static void convertHexToAnsi(String hexCode, String colorName) {
+
+		hexCode = hexCode.startsWith("#") ? hexCode.substring(1) : hexCode;
+
+		int red = Integer.parseInt(hexCode.substring(0, 2), 16);
+		int green = Integer.parseInt(hexCode.substring(2, 4), 16);
+		int blue = Integer.parseInt(hexCode.substring(4, 6), 16);
+
+		String ansiCode = String.format("\\033[48;2;%d;%d;%dm", red, green, blue);
+
+		saveColorToFile(colorName, ansiCode);
+	}
+
+	/**
+	 * Saves the specified color name and its associated ANSI code to a file.
+	 * <p>
+	 * This method writes the color name and ANSI escape code in the format
+	 * "colorName=ansiCode" to a file located at
+	 * "src/main/resources/colors/my_colors.txt". If the file or its parent
+	 * directory doesn't exist, they are created.
+	 *
+	 * @param colorName the name of the color to be saved.
+	 * @param ansiCode  the ANSI escape code representing the color.
+	 */
+	private static void saveColorToFile(String colorName, String ansiCode) {
+		Path filePath = Paths.get("src/main/resources/colors/my_colors.txt");
+
+		try {
+			Files.createDirectories(filePath.getParent());
+
+			try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath.toFile(), true))) {
+				writer.write(colorName + "=" + ansiCode);
+				writer.newLine();
+			}
+
+			System.out.println("Color saved: " + colorName + "=" + ansiCode);
+		} catch (IOException e) {
+			System.err.println("An error occurred while saving the color: " + e.getMessage());
+		}
+	}
 }

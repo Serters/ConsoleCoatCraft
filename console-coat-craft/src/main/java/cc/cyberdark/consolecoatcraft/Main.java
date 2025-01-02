@@ -65,15 +65,21 @@ public class Main {
 		clonedFlag.resize(30, 30, 15);
 		clonedFlag.display();
 		clonedFlag.info();
-		
+
 		FlagsCatalogue.displayAll();
-		
+
 		ColorUtils.importBackgroundColors("baltic_flags_bg");
-		HorizontalPlainFlag lithuniaFlag = new HorizontalPlainFlag(30, 20, "lithuania_yellow", "lithuania_green", "lithuania_red");
+		HorizontalPlainFlag lithuniaFlag = new HorizontalPlainFlag(30, 20, "lithuania_yellow", "lithuania_green",
+				"lithuania_red");
 		lithuniaFlag.display();
-		
+
+		String hexCode = "#FFDF00";
+		String colorName = "golden_yellow";
+		ColorUtils.convertHexToAnsi(hexCode, colorName);
+
+		ColorUtils.importBackgroundColors("my_colors");
 		ColorUtils.displayOptions();
-		
+
 	}
 
 }
