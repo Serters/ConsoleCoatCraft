@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/banner.webp" alt="ConsoleCoatCraft" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/banner.webp" alt="ConsoleCoatCraft" width="100%">
 </div>
 
 <div align="center">
@@ -23,26 +23,26 @@
 
 1. **Vertical Flag**:
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/horizontalFlag_example.webp" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/horizontalFlag_example.webp" width="100%">
 </div>
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/horizontalFlag_example_display.webp" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/horizontalFlag_example_display.webp" width="100%">
 </div>
 
 ---
 
 2. **Horizontal Flag**:
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/verticalFlag_example.webp" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/verticalFlag_example.webp" width="100%">
 </div>
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/verticalFlag_example_display.webp" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/verticalFlag_example_display.webp" width="100%">
 </div>
 
 ## UML class diagram
 
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/uml_class_diagram.webp" alt="uml class diagram" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/uml_class_diagram.webp" alt="uml class diagram" width="100%">
 </div>
 
 ## Code
@@ -50,34 +50,34 @@
 1. **CoatOfArms.generate()**: Generates the coat of arms pattern as an array of strings. Each string represents a row in the pattern, with characters representing the coat of arms symbol or background. The method reads the symbol image associated with the coat of arms, resizes it to the specified size, and converts it into a pattern of characters representing the image pixels. Each pixel is represented by two characters: "██" for non-transparent pixels and " " for transparent pixels.
 
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/CoatOfArms_generate.webp" alt="CoatOfArms generate()" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/CoatOfArms_generate.webp" alt="CoatOfArms generate()" width="100%">
 </div>
 
 ---
 
 2. **HorizontalPlainFlag.generate()**: Generates the horizontal plain flag pattern as an array of strings. The method generates a flag based on the width, height and colors picked by the user. 
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/HorizontalPlainFlag_generate.webp" alt="HorizontalPlainFlag generate()" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/HorizontalPlainFlag_generate.webp" alt="HorizontalPlainFlag generate()" width="100%">
 </div>
 
 ---
 
 3. **Flag.display()**: Displays all types of Flags. 
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/Flag_display.webp" alt="HorizontalPlainFlag generate()" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/Flag_display.webp" alt="HorizontalPlainFlag generate()" width="100%">
 </div>
 
 ---
 
 4. **ColorUtils.importBackgroundColors()** & **Utils.importData()**: Imports background colors data from a specified file and updates the corresponding data structure.
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/ColorUtils_importBackgroundColors.webp" alt="HorizontalPlainFlag generate()" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/ColorUtils_importBackgroundColors.webp" alt="HorizontalPlainFlag generate()" width="100%">
 </div>
 
 <br>
 
 <div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/readme/console-coat-craft/src/main/resources/readme/webps/Utils_importData.webp" width="100%">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/Utils_importData.webp" width="100%">
 </div>
 
 ---
