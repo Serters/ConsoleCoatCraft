@@ -100,7 +100,7 @@ public class CoatOfArms implements Renderable, Prototype<CoatOfArms> {
 	 * The method reads the symbol image associated with the coat of arms, resizes
 	 * it to the specified size, and converts it into a pattern of characters
 	 * representing the image pixels. Each pixel is represented by two characters:
-	 * "██" for non-transparent pixels and " " for transparent pixels.
+	 * "â–ˆâ–ˆ" for non-transparent pixels and " " for transparent pixels.
 	 *
 	 * The alpha value of each pixel in the resized image is used to determine its
 	 * transparency. The ARGB (Alpha, Red, Green, Blue) value of the pixel is

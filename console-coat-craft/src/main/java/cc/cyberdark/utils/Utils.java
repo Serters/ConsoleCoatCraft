@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Map;
+import java.awt.*;
 
 //TODO
 /**
@@ -121,6 +122,53 @@ public class Utils {
 			}
 		} catch (IOException e) {
 			System.err.println("Error reading file: " + e.getMessage());
+		}
+	}
+
+	/**
+	 * Generates an image with transparent background and centers the given text or
+	 * emote in the image. The generated PNG file is saved in the
+	 * "src/main/resources/symbols/" directory, overwriting any existing file.
+	 *
+	 * @param text     The text or emote (e.g., emoji) to render in the image.
+	 * @param fileName The name of the output PNG file (e.g., "output.png").
+	 */
+	public static void textToSymbol(String text, String fileName) {
+		String outputDir = "src/main/resources/symbols/";
+		File dir = new File(outputDir);
+		if (!dir.exists())
+			dir.mkdirs();
+
+		File outputFile = new File(outputDir + fileName);
+		int imageSize = 512;
+		int fontSize = 128;
+
+		BufferedImage image = new BufferedImage(imageSize, imageSize, BufferedImage.TYPE_INT_ARGB);
+		Graphics2D g2d = image.createGraphics();
+
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		g2d.setComposite(AlphaComposite.Clear);
+		g2d.fillRect(0, 0, imageSize, imageSize);
+		g2d.setComposite(AlphaComposite.SrcOver);
+		g2d.setColor(Color.BLACK);
+		g2d.setFont(new Font("Segoe UI Emoji", Font.BOLD, fontSize));
+
+		FontMetrics metrics = g2d.getFontMetrics();
+
+		int textWidth = metrics.stringWidth(text);
+		int textHeight = metrics.getHeight();
+		int x = (imageSize - textWidth) / 2;
+		int y = (imageSize - textHeight) / 2 + metrics.getAscent() - metrics.getDescent() / 2;
+
+		g2d.drawString(text, x, y);
+
+		g2d.dispose();
+
+		try {
+			ImageIO.write(image, "png", outputFile);
+			System.out.println("Image saved to " + outputFile.getAbsolutePath());
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 

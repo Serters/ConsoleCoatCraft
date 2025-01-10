@@ -3,13 +3,14 @@ package cc.cyberdark.utils;
 import java.util.Map;
 import java.util.Random;
 import java.util.LinkedHashMap;
-
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 /**
  * The Colors class provides utility methods for working with ANSI color codes
@@ -230,16 +231,21 @@ public class ColorUtils {
 	 * @param colorName the name to associate with the color when saving.
 	 */
 	public static void convertHexToAnsi(String hexCode, String colorName) {
+	    try {
+	        hexCode = hexCode.startsWith("#") ? hexCode.substring(1) : hexCode;
 
-		hexCode = hexCode.startsWith("#") ? hexCode.substring(1) : hexCode;
+	        int red = Integer.parseInt(hexCode.substring(0, 2), 16);
+	        int green = Integer.parseInt(hexCode.substring(2, 4), 16);
+	        int blue = Integer.parseInt(hexCode.substring(4, 6), 16);
 
-		int red = Integer.parseInt(hexCode.substring(0, 2), 16);
-		int green = Integer.parseInt(hexCode.substring(2, 4), 16);
-		int blue = Integer.parseInt(hexCode.substring(4, 6), 16);
+	        String ansiCode = String.format("\u001B[48;2;%d;%d;%dm", red, green, blue);
 
-		String ansiCode = String.format("\\033[48;2;%d;%d;%dm", red, green, blue);
-
-		saveColorToFile(colorName, ansiCode);
+	        saveColorToFile(colorName, ansiCode);
+	    } catch (IllegalArgumentException e) {
+	        System.err.println("Error: " + e.getMessage());
+	    } catch (IOException e) {
+	        System.err.println("An I/O error occurred: " + e.getMessage());
+	    }
 	}
 
 	/**
@@ -248,25 +254,39 @@ public class ColorUtils {
 	 * This method writes the color name and ANSI escape code in the format
 	 * "colorName=ansiCode" to a file located at
 	 * "src/main/resources/colors/my_colors.txt". If the file or its parent
-	 * directory doesn't exist, they are created.
+	 * directory doesn't exist, they are created. If a color with the same name
+	 * already exists, an error is thrown.
 	 *
 	 * @param colorName the name of the color to be saved.
 	 * @param ansiCode  the ANSI escape code representing the color.
+	 * @throws IOException              if an I/O error occurs.
+	 * @throws IllegalArgumentException if a color with the same name already
+	 *                                  exists.
 	 */
-	private static void saveColorToFile(String colorName, String ansiCode) {
+	private static void saveColorToFile(String colorName, String ansiCode)
+			throws IOException, IllegalArgumentException {
 		Path filePath = Paths.get("src/main/resources/colors/my_colors.txt");
 
-		try {
-			Files.createDirectories(filePath.getParent());
-
-			try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath.toFile(), true))) {
-				writer.write(colorName + "=" + ansiCode);
-				writer.newLine();
+		if (Files.exists(filePath)) {
+			try (BufferedReader reader = Files.newBufferedReader(filePath)) {
+				String line;
+				while ((line = reader.readLine()) != null) {
+					String[] parts = line.split("=");
+					if (parts.length == 2 && parts[0].trim().equalsIgnoreCase(colorName.trim())) {
+						throw new IllegalArgumentException("A color with the name '" + colorName + "' already exists.");
+					}
+				}
 			}
-
-			System.out.println("Color saved: " + colorName + "=" + ansiCode);
-		} catch (IOException e) {
-			System.err.println("An error occurred while saving the color: " + e.getMessage());
 		}
+
+		Files.createDirectories(filePath.getParent());
+
+		try (BufferedWriter writer = Files.newBufferedWriter(filePath, StandardOpenOption.CREATE,
+				StandardOpenOption.APPEND)) {
+			writer.write(colorName + "=" + ansiCode);
+			writer.newLine();
+		}
+
+		System.out.println("Color saved: " + colorName + "=" + ansiCode);
 	}
 }

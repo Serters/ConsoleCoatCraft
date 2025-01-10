@@ -7,6 +7,7 @@ import cc.cyberdark.flags.HorizontalPlainFlag;
 import cc.cyberdark.flags.VerticalFlag;
 import cc.cyberdark.flags.VerticalPlainFlag;
 import cc.cyberdark.utils.ColorUtils;
+import cc.cyberdark.utils.Utils;
 
 /**
  * The main class for the Console Coat of Arms Crafting application.
@@ -39,8 +40,10 @@ public class Main {
 		VerticalPlainFlag verticalPlainFlag = new VerticalPlainFlag(11, 8, randomColors);
 		verticalPlainFlag.display();
 
+		Utils.textToSymbol("⚔️", "test.png");
+		
 		// Create and display a coat of arms with specified attributes
-		CoatOfArms coatOfArms = new CoatOfArms(48, "eagle", "yellow", "center", "middle");
+		CoatOfArms coatOfArms = new CoatOfArms(116, "test", "yellow", "center", "middle");
 		coatOfArms.display();
 
 		// Create and display a random coat of arms
