@@ -4,6 +4,7 @@ import cc.cyberdark.flags.CoatOfArms;
 import cc.cyberdark.flags.FlagsCatalogue;
 import cc.cyberdark.flags.HorizontalFlag;
 import cc.cyberdark.flags.HorizontalPlainFlag;
+import cc.cyberdark.flags.NordicCrossFlag;
 import cc.cyberdark.flags.VerticalFlag;
 import cc.cyberdark.flags.VerticalPlainFlag;
 import cc.cyberdark.utils.ColorUtils;
@@ -31,7 +32,7 @@ public class Main {
 
 		// Generate random colors
 		String[] randomColors = ColorUtils.generateRandom(4);
-
+		
 		// Create and display a horizontal plain flag
 		HorizontalPlainFlag horizontalPlainFlag = new HorizontalPlainFlag(12, 7, "white", "red");
 		horizontalPlainFlag.display();
@@ -82,6 +83,10 @@ public class Main {
 
 		ColorUtils.importBackgroundColors("my_colors");
 		ColorUtils.displayOptions();
+		
+		NordicCrossFlag ncf = new NordicCrossFlag(56, 32, "white", "red", "blue");
+		ncf.display();
+
 
 	}
 
