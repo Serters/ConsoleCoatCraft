@@ -39,6 +39,18 @@
   <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/verticalFlag_example_display.webp" width="100%">
 </div>
 
+---
+
+``` NordicCrossFlag ncf = new NordicCrossFlag(72, 46, "red", "blue", "white");
+		ncf.display();
+```
+
+<div align="center">
+  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/NordicFlag_example_display.png" width="100%">
+</div>
+
+3. **Nordic Cross Flag**
+
 ## UML class diagram
 
 <div align="center">

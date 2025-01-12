@@ -84,7 +84,7 @@ public class Main {
 		ColorUtils.importBackgroundColors("my_colors");
 		ColorUtils.displayOptions();
 		
-		NordicCrossFlag ncf = new NordicCrossFlag(56, 32, "white", "red", "blue");
+		NordicCrossFlag ncf = new NordicCrossFlag(72, 46, "red", "blue", "white");
 		ncf.display();
 
 
