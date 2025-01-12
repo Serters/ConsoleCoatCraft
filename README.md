@@ -41,8 +41,9 @@
 
 ---
 
-``` NordicCrossFlag ncf = new NordicCrossFlag(72, 46, "red", "blue", "white");
-		ncf.display();
+```java
+NordicCrossFlag ncf = new NordicCrossFlag(72, 46, "red", "blue", "white");
+ncf.display();
 ```
 
 <div align="center">
