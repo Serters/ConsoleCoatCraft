@@ -5,6 +5,7 @@ import cc.cyberdark.flags.FlagsCatalogue;
 import cc.cyberdark.flags.HorizontalFlag;
 import cc.cyberdark.flags.HorizontalPlainFlag;
 import cc.cyberdark.flags.NordicCrossFlag;
+import cc.cyberdark.flags.SaltirePlainFlag;
 import cc.cyberdark.flags.VerticalFlag;
 import cc.cyberdark.flags.VerticalPlainFlag;
 import cc.cyberdark.utils.ColorUtils;
@@ -44,7 +45,7 @@ public class Main {
 		Utils.textToSymbol("⚔️", "test.png");
 		
 		// Create and display a coat of arms with specified attributes
-		CoatOfArms coatOfArms = new CoatOfArms(116, "test", "yellow", "center", "middle");
+		CoatOfArms coatOfArms = new CoatOfArms(32, "test", "yellow", "center", "middle");
 		coatOfArms.display();
 
 		// Create and display a random coat of arms
@@ -87,7 +88,9 @@ public class Main {
 		NordicCrossFlag ncf = new NordicCrossFlag(72, 46, "red", "blue", "white");
 		ncf.display();
 
-
+		SaltirePlainFlag sflag = new SaltirePlainFlag(72, "blue", "red");
+		sflag.display();
+		
 	}
 
 }
