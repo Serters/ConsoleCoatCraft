@@ -21,28 +21,40 @@
 
 ## Examples
 
-1. **Vertical Flag**:
-<div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/horizontalFlag_example.webp" width="100%">
-</div>
+1. **Horizontal FlagV**:
+```java
+CoatOfArms fox = new CoatOfArms(26, "Fox", "Black", "center", "middle")
+
+HorizontalFkag horizontalFlag = new HorizontalFkag(62, 32, fox, "orange", "black", "white", "orange " orange", "white", "black", "orange")
+
+horizontalFlag.display();
+```
 <div align="center">
   <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/horizontalFlag_example_display.webp" width="100%">
 </div>
 
 ---
 
-2. **Horizontal Flag**:
-<div align="center">
-  <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/verticalFlag_example.webp" width="100%">
-</div>
+2. **Vertical Flag**:
+```java
+CoatOfArms dolphin = new CoatOfArms(26, "Dolphin", "Yellow", "center", "middle")
+
+VerticalFlag verticalFlag = new VerticalFlag (62, 32, dolphin, "Black", "Yellow")
+
+verticalFlag.display()
+```
 <div align="center">
   <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/webps/verticalFlag_example_display.webp" width="100%">
 </div>
 
 ---
+CoatOfArms fox = new CoatOfArms(26, "Dolphin", yellow", "left", "middle")
 
-``` NordicCrossFlag ncf = new NordicCrossFlag(72, 46, "red", "blue", "white");
-		ncf.display();
+
+```java
+NordicCrossFlag ncf = new NordicCrossFlag(72, 46, "red", "blue", "white");
+ncf.display();
+
 ```
 
 <div align="center">
