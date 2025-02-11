@@ -25,7 +25,7 @@
 ```java
 CoatOfArms fox = new CoatOfArms(26, "Fox", "Black", "center", "middle")
 
-HorizontalFkag horizontalFlag = new HorizontalFkag(62, 32, fox, "orange", "black", "white", "orange " orange", "white", "black", "orange")
+HorizontalFlag horizontalFlag = new HorizontalFlag(62, 32, fox, "orange", "black", "white", "orange " orange", "white", "black", "orange")
 
 horizontalFlag.display();
 ```
@@ -37,7 +37,7 @@ horizontalFlag.display();
 
 2. **Vertical Flag**:
 ```java
-CoatOfArms dolphin = new CoatOfArms(26, "Dolphin", "Yellow", "center", "middle")
+CoatOfArms fox = new CoatOfArms(26, "Dolphin", yellow", "left", "middle")
 
 VerticalFlag verticalFlag = new VerticalFlag (62, 32, dolphin, "Black", "Yellow")
 
@@ -48,9 +48,8 @@ verticalFlag.display()
 </div>
 
 ---
-CoatOfArms fox = new CoatOfArms(26, "Dolphin", yellow", "left", "middle")
 
-
+3. **Nordic Cross Flag**
 ```java
 NordicCrossFlag ncf = new NordicCrossFlag(72, 46, "red", "blue", "white");
 ncf.display();
@@ -60,8 +59,6 @@ ncf.display();
 <div align="center">
   <img src="https://github.com/Serters/ConsoleCoatCraft/blob/main/console-coat-craft/src/main/resources/readme/NordicFlag_example_display.png" width="100%">
 </div>
-
-3. **Nordic Cross Flag**
 
 ## UML class diagram
 
